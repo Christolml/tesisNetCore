@@ -32,6 +32,10 @@
     <TypeScriptCompile Include="ClientApp\components\leccion3.tsx" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ClientApp\img\l1\" />
+  </ItemGroup>
+
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
