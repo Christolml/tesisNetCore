@@ -1,6 +1,20 @@
 ﻿import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
 
+const img1 = require('../img/l3RP/l31.png');
+const img2 = require('../img/l3RP/l32.png');
+const img3 = require('../img/l3RP/l33.png');
+const img4= require('../img/l3RP/l34.png');
+const img5 = require('../img/l3RP/l35.png');
+const img6 = require('../img/l3RP/l36.png');
+const img7 = require('../img/l3RP/l37.png');
+const img8 = require('../img/l3RP/138.png');
+const img9 = require('../img/l3RP/l38.png');
+
+
+
+
+
 export class leccion3 extends React.Component<RouteComponentProps<{}>, {}> {
     public render() {
         return <div>
@@ -40,28 +54,30 @@ Todos los archivos Razor terminan con .cshtml. La mayoría de los archivos Razor
                 <li> En el  Menú de archivos de Visual Studio , Seleccionamos  Nuevo > Projecto. </li>
                 <li> Crear una nueva  ASP.NET Core Web Application. nombrar la aplicación  RazorPagesE. Es importante que el nombre del proyecto este junto sin espacios  RazorPagesE .</li>
 
-                <img src="../img/l3RP/descarga.jpg"  width="500" height="333" />
-            </ul>
+                
+                <img alt='urlNet' src={String(img1)} width="650" height="400" />
+            
 
             <li> Seleccionamos ASP.NET Core 2.0 en la barra despegable y damos doble click en Web Application ..</li>
-            <img src="../img/l3RP/l32.png" width="500" height="333" />
+            <img alt='urlNet' src={String(img2)} width="650" height="400" />
             <li> El  modelo de Visual Studio creará un proyecto..</li>
-            <img src="../img/l3RP/l33.png" width="500" height="333" />
+                <img alt='urlNet' src={String(img3)} width="650" height="400" />
             <li> Presionar F5 para arrancar la aplicación en modo debug mode o Ctrl-F5 para arrancar sin el modo debugger.</li>
-            <img src="../img/l3RP/l34.png " width="500" height="333" />
+                <img alt='urlNet' src={String(img4)} width="650" height="400" />
             <h2>Añadir un modelo para Razor Pages app en ASP.NET Core.</h2>
             <li>Damos click derecho en la carpeta de pages y seleccionamos agregar > Pagina de Razor...</li>
-            <img src="../img/l3RP/l35jpg" width="500" height="333" />
+                <img alt='urlNet' src={String(img5)} width="650" height="400" />
             <li> Damos click en Página de Razor y después aceptar..</li>
-            <img src="../img/l3RP/l36jpg" width="500" height="333" />
+                <img alt='urlNet' src={String(img6)} width="650" height="400" />
             <li> Ingresamos el nombre que queremos que tenga y damos en Agregar..</li>
-            <img src="../img/l3RP/l37jpg" width="500" height="333" />
+                <img alt='urlNet' src={String(img7)} width="650" height="400" />
             <li> Nos creará un archivo .cshtml para poder trabajar.</li>
-            <img src="../img/l3RP/l37jpg" width="500" height="333" />
+                <img alt='urlNet' src={String(img8)}  />
 
             <h2>Ejemplo</h2>
-            <img src="../img/l3RP/l38jpg" width="500" height="333" />
+                <img alt='urlNet' src={String(img9)} width="650" height="400" />
 
+            </ul>
         </div>;
     }
 }
