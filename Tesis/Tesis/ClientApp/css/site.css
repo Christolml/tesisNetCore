@@ -35,7 +35,7 @@
     /* On small screens, convert the nav menu to a vertical sidebar */
     .main-nav {
         height: 100%;
-        width: calc(25% - 20px);
+        width: calc(22.5% - 20px);
     }
     .main-nav .navbar {
         border-radius: 0px;
@@ -67,5 +67,30 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+    .navbar-inverse {
+        background-color: rebeccapurple;
+        border-color: #080808;
+    }
+
+    footer {
+        background-color: rebeccapurple;
+        padding: 10px;
+        text-align: center;
+        color: white;
+    }
+    .main-nav .navbar a {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background: rebeccapurple;
+        color: wheat;
+    }
+    .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+        z-index: 2;
+        color: #fff;
+        background-color: purple;
+        border-color: white;
     }
 }
