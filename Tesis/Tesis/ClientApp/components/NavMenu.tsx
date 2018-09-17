@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+
+
 export class NavMenu extends React.Component<{}, {}> {
     public render() {
         return <div className='main-nav'>
-                <div className='navbar navbar-inverse'>
+            <div className='navbar navbar-inverse'>
                 <div className='navbar-header'>
                     <button type='button' className='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
                         <span className='sr-only'>Toggle navigation</span>
@@ -12,54 +14,115 @@ export class NavMenu extends React.Component<{}, {}> {
                         <span className='icon-bar'></span>
                         <span className='icon-bar'></span>
                     </button>
-                    <Link className='navbar-brand' to={ '/' }>Tesis</Link>
+                    <Link className='navbar-brand' to={'/'}>Tesis</Link>
                 </div>
                 <div className='clearfix'></div>
                 <div className='navbar-collapse collapse'>
                     <ul className='nav navbar-nav'>
-                        <li>
-                            <NavLink to={ '/' } exact activeClassName='active'>
-                                <span className='glyphicon glyphicon-home'></span> Home
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={ '/counter' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-education'></span> Counter
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={ '/fetchdata' } activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Fetch data
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={'/leccion1'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Primeros pasos
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={'/leccion2'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> ASP.NET Web Application
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={'/leccion3'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Razer Pages
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={'/leccion3b'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> CRUD
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to={'/leccion4'} activeClassName='active'>
-                                <span className='glyphicon glyphicon-th-list'></span> Logging And Diagnostics 
-                            </NavLink>
-                        </li>
+
+
+
+                        <div id="MainMenu">
+                            <div className="list-group panel">
+
+                                <a href="#demo3" className="list-group-item list-group-item active" data-toggle="collapse" data-parent="#MainMenu">Weas de NET Core</a>
+                                <div className="collapse" id="demo3">
+                                    <a className="list-group-item">
+                                        <NavLink to={'/'} exact activeClassName='active'>
+                                            <span className='glyphicon glyphicon-home'></span> Home
+                                        </NavLink>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <NavLink to={'/counter'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-education'></span> Counter
+                                        </NavLink>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <NavLink to={'/fetchdata'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-th-list'></span> Fetch data
+                                        </NavLink>
+                                    </a>
+                                </div>
+
+
+
+                                <a href="#principiante" className="list-group-item list-group-item active" data-toggle="collapse" data-parent="#MainMenu">Principiante</a>
+                                <div className="collapse" id="principiante">
+                                    <a className="list-group-item">
+                                        <NavLink to={'/netcore/PrimerosPasos'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-knight'></span> 1.1 Primeros pasos
+                                        </NavLink>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <NavLink to={'/netcore/ComandosDotNet'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-flash'></span> 2.1 ASP.NET Web Application
+                                        </NavLink>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <NavLink to={'/netcore/RazorPages'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-th-list'></span> Razer Pages
+                                        </NavLink>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <NavLink to={'/netcore/CRUD'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-th-list'></span> CRUD
+                                        </NavLink>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <NavLink to={'/netcore/Logging'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-th-list'></span> Logging And Diagnostics
+                                        </NavLink>
+                                    </a>
+                                </div>
+
+
+                                <a href="#intermedio" className="list-group-item list-group-item active" data-toggle="collapse" data-parent="#MainMenu">Intermedio</a>
+                                <div className="collapse" id="intermedio">
+                                    <a className="list-group-item">
+                                        <NavLink to={'/netcore/Autenticacion'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-knight'></span> 4.1 Autenticaci&#243;n 
+                                        </NavLink>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <NavLink to={'/netcore/AutenticacionExterna'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-flash'></span> 4.2 Autenticaci&#243;n externa
+                                        </NavLink>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <NavLink to={'/netcore/Autorizacion'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-th-list'></span> 4.3 Autorizaci&#243;n
+                                        </NavLink>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <NavLink to={'/netcore/WebAPI'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-th-list'></span> 5.1 Web API 
+                                        </NavLink>
+                                    </a>
+                                    <a className="list-group-item">
+                                        <NavLink to={'/netcore/Swagger'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-th-list'></span> 5.2 Swagger 
+                                        </NavLink>
+                                    </a>
+                                </div>              
+
+
+
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+
                     </ul>
                 </div>
             </div>
         </div>;
     }
+
 }

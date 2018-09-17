@@ -15,7 +15,7 @@ const img9 = require('../img/l4/9.png');
 
 
 
-export class leccion4 extends React.Component<RouteComponentProps<{}>, {}> {
+export class Logging extends React.Component<RouteComponentProps<{}>, {}> {
     public render() {
         return <div>
             <h1>Logging And Diagnósticos </h1>

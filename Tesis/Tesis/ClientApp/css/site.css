@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 
 .main-nav li .glyphicon {
     margin-right: 10px;
@@ -11,6 +11,9 @@
     background-color: #4189C7;
     color: white;
 }
+
+
+
 
 /* Keep the nav menu independent of scrolling and on top of other items */
 .main-nav {

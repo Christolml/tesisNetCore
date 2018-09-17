@@ -15,7 +15,7 @@ const img9 = require('../img/l3RP/l38.png');
 
 
 
-export class leccion3 extends React.Component<RouteComponentProps<{}>, {}> {
+export class RazorPages extends React.Component<RouteComponentProps<{}>, {}> {
     public render() {
         return <div>
             <h1>Razor Pages</h1>

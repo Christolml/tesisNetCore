@@ -13,7 +13,7 @@ const img8 = require('../img/l3CRUD/8.png');
 const img9 = require('../img/l3CRUD/9.png');
 
 
-export class leccion3b extends React.Component<RouteComponentProps<{}>, {}> {
+export class CRUD extends React.Component<RouteComponentProps<{}>, {}> {
     public render() {
         return <div>
 
