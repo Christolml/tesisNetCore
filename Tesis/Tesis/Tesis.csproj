@@ -28,17 +28,27 @@
     <None Remove="ClientApp\components\Autenticacion.tsx" />
     <None Remove="ClientApp\components\AutenticacionExterna.tsx" />
     <None Remove="ClientApp\components\Autorizacion.tsx" />
+    <None Remove="ClientApp\components\ConfiguracionAvanzada.tsx" />
+    <None Remove="ClientApp\components\Identity.tsx" />
+    <None Remove="ClientApp\components\Middleware.tsx" />
     <None Remove="ClientApp\components\RazorPages.tsx" />
     <None Remove="ClientApp\components\Swagger.tsx" />
+    <None Remove="ClientApp\components\tagHelpers.tsx" />
+    <None Remove="ClientApp\components\ViewComponent.tsx" />
     <None Remove="ClientApp\components\webAPI.tsx" />
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\components\ViewComponent.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\ConfiguracionAvanzada.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Middleware.tsx" />
     <TypeScriptCompile Include="ClientApp\components\Autenticacion.tsx" />
     <TypeScriptCompile Include="ClientApp\components\AutenticacionExterna.tsx" />
     <TypeScriptCompile Include="ClientApp\components\Autorizacion.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\Identity.tsx" />
     <TypeScriptCompile Include="ClientApp\components\RazorPages.tsx" />
     <TypeScriptCompile Include="ClientApp\components\Swagger.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\tagHelpers.tsx" />
     <TypeScriptCompile Include="ClientApp\components\WebAPI.tsx" />
   </ItemGroup>
 
