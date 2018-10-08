@@ -12,7 +12,11 @@
     color: white;
 }
 
-
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto/9; /* Bug de ie8*/
+}
 
 
 /* Keep the nav menu independent of scrolling and on top of other items */
@@ -46,7 +50,7 @@
         float: none;
     }
     .main-nav .navbar-collapse {
-        border-top: 1px solid #444;
+        border-top: 1px solid #5c2d91;
         padding: 0px;
     }
     .main-nav .navbar ul {
@@ -69,28 +73,34 @@
         text-overflow: ellipsis;
     }
     .navbar-inverse {
-        background-color: rebeccapurple;
+        background-color: #5c2d91;
         border-color: #080808;
     }
 
     footer {
-        background-color: rebeccapurple;
+        background-color: #5c2d91;
         padding: 10px;
         text-align: center;
         color: white;
     }
-    .main-nav .navbar a {
+    .main-nav .navbar {
         width: 100%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        background: rebeccapurple;
+        background: #5c2d91;
         color: wheat;
     }
     .list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
         z-index: 2;
         color: #fff;
-        background-color: purple;
-        border-color: white;
+        background-color: #5c2d91;
+        border-color: #5c2d91;
     }
+
+
+
+
+
+
 }

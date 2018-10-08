@@ -123,8 +123,21 @@ export class NavMenu extends React.Component<{}, {}> {
                                 <a href="#Avanzado" className="list-group-item list-group-item active" data-toggle="collapse" data-parent="#MainMenu">Avanzado</a>
                                 <div className="collapse" id="Avanzado">
                                     <a className="list-group-item">
+                                        <NavLink to={'/netcore/Middleware'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-knight'></span> 10.1 Middleware
+                                        </NavLink>
+                                    </a><a className="list-group-item">
+                                        <NavLink to={'/netcore/ConfiguracionAvzda'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-knight'></span> 10.2 Configuraci&#243;n Avanzada
+                                        </NavLink>
+                                    </a><a className="list-group-item">
+                                        <NavLink to={'/netcore/ViewComponent'} activeClassName='active'>
+                                            <span className='glyphicon glyphicon-knight'></span> 10.3 View Components
+                                        </NavLink>
+                                    </a>
+                                    <a className="list-group-item">
                                         <NavLink to={'/netcore/Hosting'} activeClassName='active'>
-                                            <span className='glyphicon glyphicon-knight'></span> 10.3 Hosting
+                                            <span className='glyphicon glyphicon-knight'></span> 10.4 Hosting
                                         </NavLink>
                                     </a>
                                     <a className="list-group-item">
