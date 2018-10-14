@@ -15,22 +15,22 @@ export class Enviroments extends React.Component<RouteComponentProps<{}>, {}> {
                 <p></p>
                 <pre>
                     public void Configure(IApplicationBuilder app, IHostingEnvironment env)<br />
-
-                        if (env.IsDevelopment())<br />
-    
-                        app.UseDeveloperExceptionPage(); <br />
-                    }
-                
-                    if (env.IsProduction() || env.IsStaging() || env.IsEnvironment("Staging_2"))<br />
-    
-                        app.UseExceptionHandler("/Error"); <br />
-                    app.UseHsts();<br />
-                }
-                
-                app.UseHttpsRedirection();<br />
-                    app.UseStaticFiles();<br />
-                    app.UseCookiePolicy();<br />
-                app.UseMvc();<br />
+                    &#123;<br />
+                     &#32;&#32;  if (env.IsDevelopment())<br />
+                     &#32;&#32;  &#123;<br />
+                     &#32;&#32;  app.UseDeveloperExceptionPage(); <br />
+                    &#32;&#32; }<br />
+               
+                     &#32;&#32;  if (env.IsProduction() || env.IsStaging() || env.IsEnvironment("Staging_2"))<br />
+                     &#32;&#32;  &#123;<br />
+                     &#32;&#32;  app.UseExceptionHandler("/Error"); <br />
+                     &#32;&#32;  app.UseHsts();<br />
+                     &#32;&#32;  }
+                    
+                     &#32;&#32; app.UseHttpsRedirection();<br />
+                     &#32;&#32; app.UseStaticFiles();<br />
+                     &#32;&#32; app.UseCookiePolicy();<br />
+                     &#32;&#32; app.UseMvc();<br />
             }
             
             
@@ -43,17 +43,17 @@ export class Enviroments extends React.Component<RouteComponentProps<{}>, {}> {
                 <p></p>
                 <pre>
                     public void Configure(IApplicationBuilder app, IHostingEnvironment env)<br />
+                    &#123;<br />
+                    &#32;&#32; @page<br />
+                    &#32;&#32; @inject Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnv<br />
+                    &#32;&#32; @model AboutModel<br />
+                    &#32;&#32; @<br />
+                     &#32;&#32;    ViewData["Title"] = "About";<br />
+                    }<br />
+                    &#32;&#32; &#60;h2>@ViewData["Title"]&#60;/h2><br />
+                    &#32;&#32; &#60;h3>@Model.Message&#60;/h3><br />
 
-                    @page<br />
-                    @inject Microsoft.AspNetCore.Hosting.IHostingEnvironment hostingEnv<br />
-                    @model AboutModel<br />
-                    @br />
-                        ViewData["Title"] = "About";<br />
-                    }
-                    <h2>@ViewData["Title"]</h2><br />
-                    <h3>@Model.Message</h3><br />
-
-                    <p> ASPNETCORE_ENVIRONMENT = @hostingEnv.EnvironmentName</p><br />
+                    &#32;&#32; <p> ASPNETCORE_ENVIRONMENT = @hostingEnv.EnvironmentName</p><br />
                    
                 </pre>
             </blockquote>
@@ -88,45 +88,45 @@ export class Enviroments extends React.Component<RouteComponentProps<{}>, {}> {
                 <pre>
                     // Clase de inicio para usar en el entorno de desarrollo<br />
                     public class StartupDevelopment<br />
+                    &#123;<br />
+                    &#32;&#32; public void ConfigureServices(IServiceCollection services)<br />
+                    &#32;&#32;   &#123;<br />    
+                        
+                      &#32;&#32; }<br />
 
-                    public void ConfigureServices(IServiceCollection services)<br />
-    
-                        ...
-                    }
-
-                    public void Configure(IApplicationBuilder app, IHostingEnvironment env)<br />
-    
-                        ...
-                    }
-                    }
+                    &#32;&#32; public void Configure(IApplicationBuilder app, IHostingEnvironment env)<br />
+                    &#32;&#32;   &#123;<br />
+                        
+                       &#32;&#32; }<br />
+                    }<br />
                 
                     // Clase de inicio para usar en el entorno de producción<br />
-                    public class StartupProduction<br />
-
-                    public void ConfigureServices(IServiceCollection services)<br />
-    
-                    ...<br />
-                    }
+                     public class StartupProduction<br />
+                     &#123;<br />
+                    &#32;&#32; public void ConfigureServices(IServiceCollection services)<br />
+                    &#32;&#32; &#123;<br />
+                  <br />
+                   &#32;&#32; }<br />
                 
-                    public void Configure(IApplicationBuilder app, IHostingEnvironment env)<br />
-    
-                    ...<br />
-                    }<br />
+                     &#32;&#32;  public void Configure(IApplicationBuilder app, IHostingEnvironment env)<br />
+                     &#32;&#32;  &#123;<br />
+                    <br />
+                   &#32;&#32;  }<br />
                     }<br />
                     
                     // Clase de inicio de emergencia<br />
               
-                    public class Startup<br />
+                   public class Startup<br />
+                     &#123;<br />
+                     &#32;&#32;  public void ConfigureServices(IServiceCollection services)<br />
+                     &#32;&#32;  &#123;<br />
+                    
+                    &#32;&#32;  }<br />
 
-                    public void ConfigureServices(IServiceCollection services)<br />
-    
-                    ...<br />
-                    }<br />
-
-                    public void Configure(IApplicationBuilder app, IHostingEnvironment env)<br />
-    
-                    ...<br />
-                    }<br />
+                     &#32;&#32;  public void Configure(IApplicationBuilder app, IHostingEnvironment env)<br />
+                     &#32;&#32;  &#123;<br />
+                    
+                  &#32;&#32;  }<br />
                     }<br />
 
                    

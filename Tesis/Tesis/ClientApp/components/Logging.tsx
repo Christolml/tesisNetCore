@@ -38,7 +38,7 @@ export class Logging extends React.Component<RouteComponentProps<{}>, {}> {
                     <pre>
 
                         [TempData] <br />
-                        Public String Message get; set;} <br />
+                        Public String Message &#123; get; set;} <br />
 
 
                     </pre>
@@ -55,18 +55,20 @@ export class Logging extends React.Component<RouteComponentProps<{}>, {}> {
                     <pre>
 
                         public async Task  &lt;IActionResult> OnPostAsync() <br />
+                        &#123; <br />
 
-                        if(!ModelState.IsValid) <br />
+                        &#32;&#32; if(!ModelState.IsValid) <br />
+                        &#32;&#32;   &#123; <br />
 
-                        return Page(); <br />
-                        }
+                        &#32;&#32;&#32;&#32;  return Page(); <br />
+                        &#32;&#32;&#32;  }<br />
+                        <br />
+                        &#32;&#32;  _context.Peliculas.Add(Pelicula); <br />
+                        &#32;&#32;  await _context.SaveChangesAsync(); <br />
 
-                        _context.Peliculas.Add(Pelicula); <br />
-                        await _context.SaveChangesAsync(); <br />
-
-                        Message = $"Pelicula Pelicula.Nombre} Añadia"; <br />
-
-                        return RedirectToPage("./Index"); <br />
+                        &#32;&#32;  Message = $"Pelicula Pelicula.Nombre} Añadia"; <br />
+                        <br />
+                        &#32;&#32;  return RedirectToPage("./Index"); <br />
                         }
 
 
@@ -76,15 +78,7 @@ export class Logging extends React.Component<RouteComponentProps<{}>, {}> {
 
                 <img alt='urlNet' src={String(img2)} />
 
-                <blockquote>
-                    <p>Archivo: <i>index.cshtml</i></p>
-                    <pre>
-
-                        <code> <h3>@Model.Message</h3></code>
-
-
-                    </pre>
-                </blockquote>
+                
 
                 <p style={{ textAlign: 'justify' }}> En el archivo .cshtml agregamos el mensaje. </p>
 
@@ -108,13 +102,14 @@ export class Logging extends React.Component<RouteComponentProps<{}>, {}> {
                     <pre>
 
                         public void ConfigureServices(IServiceCollection services) <br />
-                        {
-                            <code> services.AddDbContext &lt;AppDbContext>(options =>
-                                options.UseInMemoryDatabase("Pelicula")); <br />
-                                services.AddLogging();<br />
-                                services.AddMvc();  <br /></code>
+                        &#123; <br />
+                        &#32;&#32;   <code> services.AddDbContext &lt;AppDbContext>(options => <br />
+                              &#32;&#32;   options.UseInMemoryDatabase("Pelicula")); <br />
+                              &#32;&#32;  <br />
+                              &#32;&#32;   services.AddLogging();<br />
+                              &#32;&#32;   services.AddMvc();  <br /></code>
 
-                        }
+                        &#125; <br />
 
                     </pre>
                 </blockquote>
@@ -133,10 +128,10 @@ export class Logging extends React.Component<RouteComponentProps<{}>, {}> {
 
 
                         public CreateModel(WebApplication1.AppDbContext context, ILogger &lt;CreateModel> log)<br />
-                        {
-                            <code>   _context = context;   <br />
-                                Log = log;  </code>
-                        }
+                        &#123; <br />
+                             &#32;&#32; <code>   _context = context;   <br />
+                            &#32;&#32;  Log = log;  </code> <br />
+                        &#125; <br />
 
                     </pre>
                 </blockquote>
@@ -150,21 +145,23 @@ export class Logging extends React.Component<RouteComponentProps<{}>, {}> {
                     <pre>
 
                         public async Task  &lt;IActionResult> OnPostAsync() <br />
+                        &#123; <br />
 
-                        if(!ModelState.IsValid) <br />
+                        &#32;&#32;  if(!ModelState.IsValid) <br />
+                     &#32;&#32;   &#123; <br />
+                        &#32;&#32;&#32;&#32;  return Page(); <br />
+                     &#32;&#32;   } <br />
 
-                        return Page(); <br />
-                        }
-
-                        _context.Peliculas.Add(Pelicula); <br />
-                        await _context.SaveChangesAsync(); <br />
+                       &#32;&#32;  _context.Peliculas.Add(Pelicula); <br />
+                       &#32;&#32;  await _context.SaveChangesAsync(); <br />
 
                         <br />
-                        var msg = $"Pelicula Pelicula.Nombre} Añadia";   <br />
-                        Message = msg;   <br />
-                        Log.LogCritical(msg);   <br />
-                        return RedirectToPage("./Index"); <br />
-                        }
+                       &#32;&#32;  var msg = $"Pelicula Pelicula.Nombre} Añadia";   <br />
+                       &#32;&#32;  Message = msg;   <br />
+                       &#32;&#32;  Log.LogCritical(msg);   <br />
+                       &#32;&#32;  return RedirectToPage("./Index"); <br />
+
+                        &#125; <br />
 
 
                     </pre>

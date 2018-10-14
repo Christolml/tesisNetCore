@@ -43,36 +43,20 @@ export class CRUD extends React.Component<RouteComponentProps<{}>, {}> {
                     <pre>
 
                         public class Pelicula<br />
-                        {
-                            <code>
+                        &#123; <br />
+                          
 
-                                public int  id
-                                
-                                <span> get </span>
-                                ;
-                                <span>set</span>
-                                ;} <br />
+                                &#32;&#32;&#32;&#32; public int  id &#123; get ;set ;&#125; <br />
 
-                                public String Nombre
-                              <span> get </span>
-                                ;
-                                <span>set</span>
-                                ;}<br />
+                                &#32;&#32;&#32;&#32; public String Nombre &#123; get ; set ;}<br />
 
 
-                                public String Genero
-                              <span> get </span>
-                                ;
-                                <span>set</span>
-                                ;}<br />
+                                &#32;&#32;&#32;&#32; public String Genero  &#123; get ; set ;}<br />
 
-                                public int Año   <span> get </span>
-                                ;
-                                <span>set</span>
-                                ;}<br />
+                                &#32;&#32;&#32;&#32; public int Año &#123;  get  ; set ;}<br />
 
-                            </code>
-                        }
+                            
+                        &#125; <br />
 
 
                     </pre>
@@ -88,11 +72,11 @@ export class CRUD extends React.Component<RouteComponentProps<{}>, {}> {
                     <pre>
 
                         public void ConfigureServices(IServiceCollection services) <br />
-                        {
-                            <code> services.AddDbContext &lt;AppDbContext>(options =>
-                                options.UseInMemoryDatabase("Pelicula")); <br />
-                                services.AddMvc();  <br /></code>
-                        }
+                        &#123; <br />
+                               &#32;&#32;&#32;&#32;  <code> services.AddDbContext &lt;AppDbContext>(options => <br />
+                               &#32;&#32;&#32;&#32;   options.UseInMemoryDatabase("Pelicula")); <br />
+                               &#32;&#32;&#32;&#32;   services.AddMvc();  <br /></code>
+                        &#125; <br />
 
 
 
@@ -107,20 +91,19 @@ export class CRUD extends React.Component<RouteComponentProps<{}>, {}> {
                 <blockquote>
                     <p>Archivo: <i>appDbContex.cs</i></p>
                     <pre>
-                        <code>
-                            public class AppDbContext : DbContext <br />
-
-                            public AppDbContext(DbContextOptions options) <br />
-                            : base(options)<br />
-
-                            {
-
-                            }
-                            public DbSet &lt;Pelicula> Peliculas get; set; }<br />
-
-                            }
                        
-                         </code>
+                            public class AppDbContext : DbContext <br />
+                            &#123; <br />
+
+                             &#32;&#32;&#32;&#32;  public AppDbContext(DbContextOptions options) <br />
+                             &#32;&#32;&#32;&#32;  &#32;&#32;&#32;  : base(options)<br />
+                             &#32;&#32;&#32;&#32;  &#32;&#32;&#32;&#32; &#123; <br />
+                             &#32;&#32;&#32;&#32;  &#32;&#32;&#32;&#32; &#125; <br />
+                             &#32;&#32;&#32;&#32; public DbSet &lt;Pelicula> Peliculas &#123; get; set;  &#125; <br />
+
+                            &#125; <br />
+                       
+                       
                     </pre>
 
 
