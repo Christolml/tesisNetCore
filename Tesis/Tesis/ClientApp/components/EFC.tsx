@@ -54,37 +54,38 @@ EF Core puede servir como asignador relacional de objetos (O/RM), lo que permite
                     namespace Intro<br />
 
                     public class BloggingContext : DbContext<br />
+                    &#123;<br />
 
-                    public DbSet &lt;Blog> Blogs get; set; }<br />
-                    public DbSet &lt;Post> Posts get; set; }<br />
+                     &#32;&#32; public DbSet &lt;Blog> Blogs &#123; get; set; }<br />
+                     &#32;&#32; public DbSet &lt;Post> Posts &#123; get; set; }<br />
 
-                    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)<br />
+                    &#32;&#32;  protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)<br />
 
-                    optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyDatabase;Trusted_Connection=True;");<br />
-                    }
-}
+                    &#32;&#32;  optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=MyDatabase;Trusted_Connection=True;");<br />
+                  &#32;&#32;   }
+  
                 <br />
-                    public class Blog<br />
-
-                    public int BlogId get; set; }<br />
-                    public string Url get; set; }<br />
-                    public int Rating get; set; }<br />
-                    public List &lt;Post> Posts get; setpublic class ; }<br />
-                    }<br />
+                     &#32;&#32; public class Blog<br />
+                   &#32;&#32;  &#123;<br />
+                     &#32;&#32; public int BlogId &#123;  get; set; }<br />
+                    &#32;&#32;  public string Url &#123; get; set; }<br />
+                     &#32;&#32; public int Rating &#123; get; set; }<br />
+                     &#32;&#32; public List &lt;Post> Posts &#123; get; setpublic class ; }<br />
+                  &#32;&#32;   }<br />
 
                     Post<br />
 
-                    public int PostId get; set; }<br />
-                    public string Title get; set; }<br />
-                    public string Content get; set; }<br />
+                   &#32;&#32;   public int PostId  &#123; get; set; }<br />
+                    &#32;&#32;  public string Title &#123; get; set; }<br />
+                    &#32;&#32;  public string Content &#123; get; set; }<br />
 
-                    public int BlogId get; set; }<br />
-                    public Blog Blog get; set; }<br />
-                    }
-                }
-   
-   
-                  
+                    &#32;&#32;  public int BlogId  &#123; get; set; }<br />
+                    &#32;&#32;  public Blog Blog &#123; get; set; }<br />
+                   &#32;&#32;  }
+                 }
+    
+    
+                   
                 </pre>
             </blockquote>
             <hr />
@@ -98,11 +99,11 @@ EF Core puede servir como asignador relacional de objetos (O/RM), lo que permite
                 <pre>
 
                     using (var db = new BloggingContext())<br />
-
-                    var blogs = db.Blogs<br />
-                    .Where(b => b.Rating > 3)<br />
-                    .OrderBy(b => b.Url)<br />
-                    .ToList();<br />
+                    &#123;<br />
+                   &#32;&#32;   var blogs = db.Blogs<br />
+                    &#32;&#32;  .Where(b => b.Rating > 3)<br />
+                    &#32;&#32;  .OrderBy(b => b.Url)<br />
+                    &#32;&#32;  .ToList();<br />
                     }
                 </pre>
             </blockquote>
@@ -115,10 +116,10 @@ EF Core puede servir como asignador relacional de objetos (O/RM), lo que permite
                 <p></p>
                 <pre>
                     using (var db = new BloggingContext())<br />
-
-                    var blog = new Blog Url = "http://sample.com"};<br />
-                    db.Blogs.Add(blog);<br />
-                    db.SaveChanges();<br />
+                    &#123;<br />
+                    &#32;&#32;  var blog = new Blog Url = "http://sample.com"};<br />
+                   &#32;&#32;   db.Blogs.Add(blog);<br />
+                    &#32;&#32;  db.SaveChanges();<br />
                     }
                 </pre>
             </blockquote>

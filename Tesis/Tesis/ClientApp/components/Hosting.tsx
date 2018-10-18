@@ -21,16 +21,16 @@ export class Hosting extends React.Component<RouteComponentProps<{}>, {}> {
                 <pre>
 
                     public class Program<br />
-
-                    public static void Main(string[] args)<br />
-
-                    CreateWebHostBuilder(args).Build().Run();<br />
-                    }
-
-                    public static IWebHostBuilder CreateWebHostBuilder(string[] args) => <br />
-                    WebHost.CreateDefaultBuilder(args)<br />
-                    .UseStartup&lt;Startup>();<br />
-                    }
+                    &#123;<br />
+                    &#32;&#32; public static void Main(string[] args)<br />
+                  &#32;&#32;   &#123;<br />
+                    &#32;&#32; CreateWebHostBuilder(args).Build().Run();<br />
+                    &#32;&#32;  }<br />
+ 
+                   &#32;&#32;  public static IWebHostBuilder CreateWebHostBuilder(string[] args) => <br />
+                    &#32;&#32; WebHost.CreateDefaultBuilder(args)<br />
+                   &#32;&#32;  .UseStartup&lt;Startup>();<br />
+                   }
                         
                    
                 </pre>
@@ -49,32 +49,32 @@ export class Hosting extends React.Component<RouteComponentProps<{}>, {}> {
                 <p>PowerShell</p>
                 <pre>
 
-                    public class Program<br />
+                   public class Program<br />
+                   &#123;<br />
+                   &#32;&#32;  public static void Main(string[] args)<br />
+                   &#32;&#32;  &#123;<br />
+                   &#32;&#32;  CreateWebHostBuilder(args).Build().Run();<br />
+                   &#32;&#32;   }<br />
 
-                    public static void Main(string[] args)<br />
+                   &#32;&#32;  public static IWebHostBuilder CreateWebHostBuilder(string[] args)<br />
+                   &#32;&#32;  &#123;<br />
+                   &#32;&#32;  var config = new ConfigurationBuilder()<br />
+                   &#32;&#32;  .SetBasePath(Directory.GetCurrentDirectory())<br />
+                   &#32;&#32; .AddJsonFile("hostsettings.json", optional: true)<br />
+                   &#32;&#32;  .AddCommandLine(args)<br />
+                   &#32;&#32;  .Build();<br />
 
-                    CreateWebHostBuilder(args).Build().Run();<br />
-                    }<br />
+                   &#32;&#32;   return WebHost.CreateDefaultBuilder(args)<br />
+                   &#32;&#32;  .UseUrls("http://*:5000")<br />
+                   &#32;&#32;  .UseConfiguration(config)<br />
+                   &#32;&#32;  .Configure(app =><br />
 
-                    public static IWebHostBuilder CreateWebHostBuilder(string[] args)<br />
-
-                    var config = new ConfigurationBuilder()<br />
-                    .SetBasePath(Directory.GetCurrentDirectory())<br />
-                    .AddJsonFile("hostsettings.json", optional: true)<br />
-                    .AddCommandLine(args)<br />
-                    .Build();<br />
-
-                    return WebHost.CreateDefaultBuilder(args)<br />
-                    .UseUrls("http://*:5000")<br />
-                    .UseConfiguration(config)<br />
-                    .Configure(app =><br />
-
-                    app.Run(context =><br />
-                    context.Response.WriteAsync("Hello, World!"));<br />
-                    })
-                    .Build();<br />
-                    }
-                }
+                    &#32;&#32;  app.Run(context => &#123;<br />
+                   &#32;&#32;  context.Response.WriteAsync("Hello, World!"));<br />
+                   &#32;&#32;  })
+                   &#32;&#32; .Build();<br />
+                    &#32;&#32; }<br />
+                 }
                               
                     </pre>
             </blockquote>
@@ -84,9 +84,9 @@ export class Hosting extends React.Component<RouteComponentProps<{}>, {}> {
             <blockquote>
                 <p>JSON</p>
                 <pre>
-
+                    &#123;<br />
                     urls: "http://*:5005"
-            }
+                    }<br />
            
                 </pre>
             </blockquote>
@@ -113,6 +113,7 @@ export class Hosting extends React.Component<RouteComponentProps<{}>, {}> {
             <blockquote>
                 <p></p>
                 <pre>
+                    &#123;<br />
                     using (host)<br />
 
                     host.Start();<br />
@@ -128,21 +129,22 @@ export class Hosting extends React.Component<RouteComponentProps<{}>, {}> {
                 <p></p>
                 <pre>
                     using (host)<br />
+                    &#123;<br />
+                   &#32;&#32;  var urls = new List&lt;string>()<br />
 
-                    var urls = new List&lt;string>()<br />
+                    &#32;&#32; "http://*:5000",<br />
+                    &#32;&#32; "http://localhost:5001"<br />
+                   &#32;&#32;  };
+ 
+                   &#32;&#32;  var host = new WebHostBuilder()<br />
+                   &#32;&#32;  &#123;<br />
+                     &#32;&#32;.UseKestrel()<br />
+                     &#32;&#32;.UseStartup&lt;Startup>()<br />
+                     &#32;&#32;.Start(urls.ToArray());<br />
 
-                    "http://*:5000",<br />
-                    "http://localhost:5001"<br />
-                    };
+                    &#32;&#32; using (host)<br />
 
-                    var host = new WebHostBuilder()<br />
-                    .UseKestrel()<br />
-                    .UseStartup&lt;Startup>()<br />
-                    .Start(urls.ToArray());<br />
-
-                    using (host)<br />
-
-                    Console.ReadLine();<br />
+                    &#32;&#32; Console.ReadLine();<br />
                     }
 
 
@@ -158,9 +160,9 @@ export class Hosting extends React.Component<RouteComponentProps<{}>, {}> {
                 <p></p>
                 <pre>
                     using (var host = WebHost.Start("http://localhost:8080", app => app.Response.WriteAsync("Hello, World!")))<br />
-
-                    Console.WriteLine("Use Ctrl-C to shutdown the host...");<br />
-                    host.WaitForShutdown();<br />
+                    &#123;<br />
+                    &#32;&#32;  Console.WriteLine("Use Ctrl-C to shutdown the host...");<br />
+                    &#32;&#32;  host.WaitForShutdown();<br />
                     }
                 </pre>
             </blockquote>

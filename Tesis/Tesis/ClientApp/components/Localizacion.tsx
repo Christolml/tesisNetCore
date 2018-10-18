@@ -25,24 +25,24 @@ export class Localizacion extends React.Component<RouteComponentProps<{}>, {}> {
                     using Microsoft.Extensions.Localization;<br />
 
                     namespace Localization.StarterWeb.Controllers<br />
+                    &#123;<br />
+                    &#32;&#32; [Route("api/[controller]")] < br />
+                    &#32;&#32; public class AboutController : Controller<br />
+                    &#32;&#32;  &#123;<br />
+                  &#32;&#32;  &#32;&#32;  private readonly IStringLocalizer&lt;AboutController> _localizer;<br />
+                   
+                  &#32;&#32;  &#32;&#32;  public AboutController(IStringLocalizer&lt;AboutController> localizer)<br />
+                  &#32;&#32;  &#32;&#32;  &#123;<br />
+                  &#32;&#32;  &#32;&#32;  _localizer = localizer; <br />
+                  &#32;&#32;  &#32;&#32;  }<br />
 
-                    [Route("api/[controller]")] < br />
-                    public class AboutController : Controller<br />
-
-                    private readonly IStringLocalizer&lt;AboutController> _localizer;<br />
-
-                    public AboutController(IStringLocalizer&lt;AboutController> localizer)<br />
-
-                    _localizer = localizer; <br />
+                 &#32;&#32;   &#32;&#32;  [HttpGet]<br />
+                  &#32;&#32;  &#32;&#32;  public string Get()<br />
+                    &#32;&#32;  &#123;<br />
+                  &#32;&#32;   &#32;&#32; return _localizer["About Title"];<br />
+                   &#32;&#32;  &#32;&#32; }<br />
+                   &#32;&#32;  }<br />
                     }<br />
-
-                    [HttpGet]<br />
-                    public string Get()<br />
-
-                    return _localizer["About Title"];<br />
-                    }
-                }
-            }
                               
                               
                 </pre>
@@ -66,21 +66,21 @@ export class Localizacion extends React.Component<RouteComponentProps<{}>, {}> {
                     using Microsoft.AspNetCore.Mvc.Localization;<br />
 
                     namespace Localization.StarterWeb.Controllers<br />
+                    &#123;<br />
+                   &#32;&#32; public class BookController : Controller<br />
+                   &#32;&#32; &#123;<br />
+                   &#32;&#32; private readonly IHtmlLocalizer&lt;BookController> _localizer;<br />
 
-                    public class BookController : Controller<br />
+                   &#32;&#32; public BookController(IHtmlLocalizer&lt;BookController> localizer)<br />
 
-                    private readonly IHtmlLocalizer&lt;BookController> _localizer;<br />
+                  &#32;&#32;  _localizer = localizer; <br />
+                        &#32;&#32;  &#32;&#32;  }<br />
+             
+                       &#32;&#32;     public IActionResult Hello(string name)<br />
 
-                    public BookController(IHtmlLocalizer&lt;BookController> localizer)<br />
-
-                    _localizer = localizer; <br />
-                    }
-           
-                            public IActionResult Hello(string name)<br />
-
-                    ViewData["Message"] = _localizer["<b>Hello</b><i> {0}</i>", name]; <br />
+                 &#32;&#32;   ViewData["Message"] = _localizer["<b>Hello</b><i> {0}</i>", name]; <br />
                     <br />
-                    return View();<br />
+                  &#32;&#32;  return View();<br />
                     }<br />
 
 
@@ -95,24 +95,24 @@ export class Localizacion extends React.Component<RouteComponentProps<{}>, {}> {
 
                     public class Program<br />
 
-
+                    <br />
                     public class TestController : Controller<br />
-
+                    
                     private readonly IStringLocalizer _localizer;<br />
                     private readonly IStringLocalizer _localizer2;<br />
-
+                    <br />
                     public TestController(IStringLocalizerFactory factory)<br />
-
-                    var type = typeof(SharedResource);<br />
-                    var assemblyName = new AssemblyName(type.GetTypeInfo().Assembly.FullName);<br />
-                    _localizer = factory.Create(type);<br />
-                    _localizer2 = factory.Create("SharedResource", assemblyName.Name);<br />
-                    }
+                    &#123;<br />
+                    &#32;&#32; var type = typeof(SharedResource);<br />
+                    &#32;&#32; var assemblyName = new AssemblyName(type.GetTypeInfo().Assembly.FullName);<br />
+                  &#32;&#32;   _localizer = factory.Create(type);<br />
+                  &#32;&#32;   _localizer2 = factory.Create("SharedResource", assemblyName.Name);<br />
+                    }<br />
                
-                    public IActionResult About()<br />
+                   &#32;&#32;  public IActionResult About()<br />
 
-                    ViewData["Message"] = _localizer["Your application description page."]<br />
-                    + " loc 2: " + _localizer2["Your application description page."];<br />
+                   &#32;&#32;  ViewData["Message"] = _localizer["Your application description page."]<br />
+                   &#32;&#32;  + " loc 2: " + _localizer2["Your application description page."];<br />
 
                 </pre>
             </blockquote>
@@ -124,11 +124,11 @@ export class Localizacion extends React.Component<RouteComponentProps<{}>, {}> {
                 <pre>
 
                     namespace Localization.StarterWeb<br />
-
-                    public class SharedResource<br />
-
-                    }
-                    }
+                    &#123;<br />
+                    &#32;&#32; public class SharedResource<br />
+                    &#32;&#32; &#123;<br />
+                    &#32;&#32; }<br />
+                    }<br />
 
                 </pre>
             </blockquote>
@@ -140,22 +140,22 @@ export class Localizacion extends React.Component<RouteComponentProps<{}>, {}> {
                 <pre>
 
                     public class InfoController : Controller<br />
+                    &#123;<br />
+                   &#32;&#32;  private readonly IStringLocalizer&lt;InfoController> _localizer;<br />
+                   &#32;&#32;  private readonly IStringLocalizer&lt;SharedResource> _sharedLocalizer;<br />
 
-                    private readonly IStringLocalizer&lt;InfoController> _localizer;<br />
-                    private readonly IStringLocalizer&lt;SharedResource> _sharedLocalizer;<br />
-
-                    public InfoController(IStringLocalizer&lt;InfoController> localizer,<br />
-                    IStringLocalizer&lt;SharedResource> sharedLocalizer)<br />
-
-                    _localizer = localizer;<br />
-                    _sharedLocalizer = sharedLocalizer;<br />
-                    }
+                   &#32;&#32;  public InfoController(IStringLocalizer&lt;InfoController> localizer,<br />
+                    &#32;&#32; IStringLocalizer&lt;SharedResource> sharedLocalizer)<br />
+                   &#32;&#32;  &#123;<br />
+                    &#32;&#32; _localizer = localizer;<br />
+                    &#32;&#32; _sharedLocalizer = sharedLocalizer;<br />
+                    &#32;&#32; }<br />
                    
-                                public string TestLoc()<br />
+                     &#32;&#32; public string TestLoc()<br />
 
-                    string msg = "Shared resx: " + _sharedLocalizer["Hello!"] +<br />
-                    " Info resx " + _localizer["Hello!"];<br />
-                    return msg;<br />
+                   &#32;&#32;  string msg = "Shared resx: " + _sharedLocalizer["Hello!"] +<br />
+                    &#32;&#32; " Info resx " + _localizer["Hello!"];<br />
+                    &#32;&#32; return msg;<br />
                     }
                
                 </pre>
@@ -174,11 +174,11 @@ export class Localizacion extends React.Component<RouteComponentProps<{}>, {}> {
 
                     @inject IViewLocalizer Localizer<br />
 
-                    @<br />
+                    @&#123;<br />
                     ViewData["Title"] = Localizer["About"];<br />
-                    }
-                    <h2>@ViewData["Title"].</h2><br />
-                    <h3>@ViewData["Message"]</h3><br />
+                    }<br />
+                     &#60;h2>@ViewData["Title"]. &#60;/h2><br />
+                     &#60;h3>@ViewData["Message"] &#60;/h3><br />
 
                     <p>@Localizer["Use this area to provide additional information."]</p><br />
 

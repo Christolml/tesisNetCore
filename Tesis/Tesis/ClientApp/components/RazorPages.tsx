@@ -84,25 +84,20 @@ Todos los archivos Razor terminan con .cshtml. La mayoría de los archivos Razor
                 <br />
                 <h2>Ejemplo</h2>
 
-                <blockquote>
-                    <p>Archivo: <i>csharp.cshtml</i></p>
-                    <pre>
-                        @page <br />
-                        &lt;h1>&lt;b>C#&lt;/b>&lt;/h1> <br />
-                        &lt;p>Esta pagina es en /lenguajes&lt;/p> <br />
-                        &lt;b>El horarios es: @&#123;2 + 2} &lt;/b> <br />
-                    </pre>
-                </blockquote>
+               
+                    <p>Ejemplo</p>
+             
 
 
                 <blockquote>
                     <pre>
 
-
+                       
+                        &#32;&#32;&#32;&#32 <br />
 
                         Hora<br />
                         &lt;!-- Bloque de instrucción única--><br />
-                        @{
+                        @ &#123; <br />
 
                             <code> var myMessage="Hello World";</code>
 
@@ -112,11 +107,11 @@ Todos los archivos Razor terminan con .cshtml. La mayoría de los archivos Razor
                         &lt;!-- Expresión en línea o variable--><br />
                         <p>The value of myMessage is: @myMessage</p><br />
 
-                        &lt;!-- Multi-statement block -->
-                                    @{
-                            <code> var greeting="Bienvenido !";
-                             var weekDay= DateTime.Now;
-                                     var greetingMessage = greeting + "  Here in Huston it is: " + weekDay;</code>
+                        &lt;!-- Multi-statement block --><br />
+                                    @ &#123; <br />
+                       &#32;&#32;&#32;&#32  var greeting="Bienvenido !";<br />
+                       &#32;&#32;&#32;&#32 var weekDay= DateTime.Now;<br />
+                       &#32;&#32;&#32;&#32 var greetingMessage = greeting + "  Here in Huston it is: " + weekDay;<br />
                         }
 
                         <p>The greeting is: @greetingMessage</p>

@@ -142,7 +142,7 @@ export class NavMenu extends React.Component<{}, {}> {
                                     </a>
                                     <a className="list-group-item">
                                         <NavLink to={'/netcore/Enviroments'} activeClassName='active'>
-                                            <span className='glyphicon glyphicon-knight'></span> 11.1 Hosting
+                                            <span className='glyphicon glyphicon-knight'></span> 11.1 Enviroments
                                         </NavLink>
                                     </a>
                                     <a className="list-group-item">
